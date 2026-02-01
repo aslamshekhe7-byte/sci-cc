@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surkhet Computer Institute & Coaching Center</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+
+<!-- CSS -->
+<style>
+/* Reset & Base */
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Roboto', sans-serif;line-height:1.6;color:#333;background:#f9f9f9;}
+a{text-decoration:none;color:inherit;}
+
+/* Header */
+header{
+  background: linear-gradient(135deg, #0056b3, #007bff);
+  color:white;
+  text-align:center;
+  padding:60px 20px;
+}
+header .logo{font-family:'Montserrat', sans-serif;font-size:32px;font-weight:700;margin-bottom:10px;}
+header h1{font-size:28px;margin-bottom:10px;}
+header p{font-size:16px;opacity:0.9;}
+
+/* Navigation */
+nav{
+  background:white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:20px;
+  padding:15px 0;
+  box-shadow:0 4px 6px rgba(0,0,0,0.05);
+  position: sticky;
+  top:0;
+  z-index:100;
+}
+nav a{font-weight:500;color:#0056b3;transition:0.3s;}
+nav a:hover{color:#007bff;}
+.lang-btn{
+  background:#28a745;
+  color:white;
+  border:none;
+  padding:6px 14px;
+  border-radius:6px;
+  cursor:pointer;
+  transition:0.3s;
+}
+.lang-btn:hover{background:#218838;}
+
+/* Hero */
+.hero{
+  background:url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f") center/cover no-repeat;
+  color:white;
+  text-align:center;
+  padding:120px 20px;
+  position:relative;
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  top:0;left:0;width:100%;height:100%;
+  background:rgba(0,0,0,0.4);
+}
+.hero h2, .hero p{position:relative;z-index:1;}
+.hero h2{font-size:36px;margin-bottom:15px;font-family:'Montserrat', sans-serif;}
+.hero p{font-size:18px;letter-spacing:1px;}
+
+/* Section */
+section{
+  padding:60px 20px;
+  max-width:1200px;
+  margin:auto;
+}
+section h2{
+  font-family:'Montserrat', sans-serif;
+  font-size:28px;
+  margin-bottom:25px;
+  text-align:center;
+  color:#0056b3;
+}
+
+/* Cards */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+  margin-top:20px;
+}
+.card{
+  padding:25px;
+  font-weight:600;
+  font-size:18px;
+  border-radius:12px;
+  text-align:center;
+  color:white;
+  box-shadow:0 8px 20px rgba(0,0,0,0.15);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.card img{
+  width:50px;
+  margin-bottom:15px;
+}
+.card:hover{
+  transform: translateY(-5px);
+  box-shadow:0 12px 25px rgba(0,0,0,0.2);
+}
+
+/* Gallery */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+  margin-top:20px;
+}
+.gallery img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  border-radius:10px;
+  transition: transform 0.3s;
+}
+.gallery img:hover{
+  transform: scale(1.05);
+}
+
+/* Form */
+form{
+  background:white;
+  padding:30px;
+  border-radius:12px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.1);
+  max-width:600px;
+  margin:auto;
+}
+form input, form select, form textarea{
+  width:100%;
+  padding:12px;
+  margin:10px 0;
+  border-radius:8px;
+  border:1px solid #ccc;
+  font-size:15px;
+}
+form button{
+  background: linear-gradient(135deg,#28a745,#1e7e34);
+  color:white;
+  padding:12px 20px;
+  border:none;
+  border-radius:8px;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.3s;
+}
+form button:hover{background: linear-gradient(135deg,#218838,#1c7430);}
+
+/* Contact */
+#contact p{margin-bottom:10px;font-weight:500;}
+#contact a{color:#0056b3;font-weight:600;transition:0.3s;}
+#contact a:hover{color:#007bff;}
+
+/* Footer */
+footer{
+  background:#0056b3;
+  color:white;
+  text-align:center;
+  padding:20px;
+  font-weight:500;
+}
+
+/* WhatsApp */
+.whatsapp{
+  position:fixed;
+  bottom:25px;
+  right:25px;
+  background:#25D366;
+  color:white;
+  padding:18px;
+  border-radius:50%;
+  text-decoration:none;
+  font-size:24px;
+  box-shadow:0 4px 15px rgba(0,0,0,0.2);
+  transition:0.3s;
+}
+.whatsapp:hover{transform:scale(1.1);}
+
+/* Responsive */
+@media(max-width:768px){
+  .hero h2{font-size:28px;}
+  .hero p{font-size:16px;}
+}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <div class="logo">SCI & CC</div>
+  <h1 id="title">Surkhet Computer Institute & Coaching Center</h1>
+  <p id="subtitle">Empowering Future Leaders in Technology</p>
+</header>
+
+<!-- Nav -->
+<nav>
+  <a href="#about">About</a>
+  <a href="#courses">Courses</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#admission">Admission</a>
+  <a href="#contact">Contact</a>
+  <button class="lang-btn" onclick="toggleLang()">नेपाली</button>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <h2 id="heroTitle">Professional Computer & Coaching Institute</h2>
+  <p id="heroText">Learn • Grow • Succeed</p>
+</section>
+
+<!-- About -->
+<section id="about">
+  <h2 id="aboutTitle">About Us</h2>
+  <p id="aboutText">
+    Surkhet Computer Institute & Coaching Center provides quality computer education with practical training and coaching.
+  </p>
+</section>
+
+<!-- Courses -->
+<section id="courses">
+  <h2 id="courseTitle">Courses Offered</h2>
+  <div class="cards">
+    <div class="card" style="background:linear-gradient(135deg,#FF6F61,#FF8A75);">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/laptop.png" alt="Computer Basics">
+      <h3>Computer Basics & MS Office</h3>
+      <p>Learn essential computer skills and office tools like Word, Excel, PowerPoint.</p>
+    </div>
+    <div class="card" style="background:linear-gradient(135deg,#6B5B95,#8A6BBE);">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/code.png" alt="Programming">
+      <h3>Programming (Python, Java, C, C++)</h3>
+      <p>Master programming languages and problem-solving techniques for software development.</p>
+    </div>
+    <div class="card" style="background:linear-gradient(135deg,#88B04B,#A3D25F);">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/web.png" alt="Web Design">
+      <h3>Web Design & Development</h3>
+      <p>Build responsive websites using HTML, CSS, and JavaScript with hands-on projects.</p>
+    </div>
+    <div class="card" style="background:linear-gradient(135deg,#F7CAC9,#F9AFAE); color:#333;">
+      <img src="https://img.icons8.com/ios-filled/50/333333/design.png" alt="Graphics Design">
+      <h3>Graphics Design (Photoshop, Illustrator)</h3>
+      <p>Create stunning visuals, banners, and logos using industry-standard software.</p>
+    </div>
+    <div class="card" style="background:linear-gradient(135deg,#92A8D1,#A9C9E2);">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/network.png" alt="Networking">
+      <h3>Hardware & Networking</h3>
+      <p>Learn computer hardware setup, maintenance, and network configuration.</p>
+    </div>
+    <div class="card" style="background:linear-gradient(135deg,#955251,#B97C8F);">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/database.png" alt="Database">
+      <h3>Database Management (MySQL, MS Access)</h3>
+      <p>Manage databases efficiently with practical knowledge of MySQL and MS Access.</p>
+    </div>
+    <div class="card" style="background:linear-gradient(135deg,#B565A7,#D085C0);">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/marketing.png" alt="Digital Marketing">
+      <h3>Digital Marketing</h3>
+      <p>Master SEO, social media, and online marketing strategies to grow businesses.</p>
+    </div>
+    <div class="card" style="background:linear-gradient(135deg,#009B77,#33C1AA);">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/android-os.png" alt="Mobile App">
+      <h3>Mobile App Development (Android / Flutter)</h3>
+      <p>Develop Android apps and cross-platform apps using Flutter framework.</p>
+    </div>
+    <div class="card" style="background:linear-gradient(135deg,#DD4124,#FF6A3A);">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/cloud.png" alt="Cloud Computing">
+      <h3>Cloud Computing & IT Tools</h3>
+      <p>Learn cloud technologies and IT tools for modern business solutions.</p>
+    </div>
+    <div class="card" style="background:linear-gradient(135deg,#45B8AC,#6BD1C0);">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/keyboard.png" alt="Typing">
+      <h3>Typing & Data Entry</h3>
+      <p>Enhance typing speed, accuracy, and professional data entry skills.</p>
+    </div>
+    <div class="card" style="background:linear-gradient(135deg,#EFC050,#F3D470); color:#333;">
+      <img src="https://img.icons8.com/ios-filled/50/333333/school.png" alt="Exam Coaching">
+      <h3>NEET / JEE / School Exam Coaching</h3>
+      <p>Prepare for competitive exams with expert coaching and study strategies.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery -->
+<section id="gallery">
+  <h2 id="galleryTitle">Institute Gallery</h2>
+  <div class="gallery">
+    <img src="https://images.unsplash.com/photo-1584697964154-47b83b1e27f2" alt="Gallery">
+    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644" alt="Gallery">
+    <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998" alt="Gallery">
+    <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df" alt="Gallery">
+  </div>
+  <p>📸 Replace demo photos with real institute photos</p>
+</section>
+
+<!-- Admission Form -->
+<section id="admission">
+  <h2 id="admissionTitle">Online Admission Form</h2>
+  <p id="admissionText">Fill the form below to apply online</p>
+
+  <form id="admissionForm">
+      <input type="text" name="name" placeholder="Full Name" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="tel" name="phone" placeholder="Phone Number" required>
+
+      <select name="course" required>
+          <option value="">Select Course</option>
+          <option>Computer Basics & MS Office</option>
+          <option>Programming (Python, Java, C, C++)</option>
+          <option>Web Design & Development</option>
+          <option>Graphics Design (Photoshop, Illustrator)</option>
+          <option>Hardware & Networking</option>
+          <option>Database Management (MySQL, MS Access)</option>
+          <option>Digital Marketing</option>
+          <option>Mobile App Development (Android / Flutter)</option>
+          <option>Cloud Computing & IT Tools</option>
+          <option>Typing & Data Entry</option>
+          <option>NEET / JEE / School Exam Coaching</option>
+      </select>
+
+      <textarea name="message" placeholder="Message"></textarea>
+      <button type="submit">Submit Admission</button>
+  </form>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+  <h2 id="contactTitle">Contact Us</h2>
+  <p>📍 Surkhet, Nepal</p>
+  <p>📞 +977-9858052111</p>
+  <p>📧 surkhetcomputerinstitute@gmail.com</p>
+
+  <iframe 
+  src="https://www.google.com/maps?q=Surkhet,Nepal&output=embed"
+  width="100%" height="300" style="border:0;border-radius:12px;">
+  </iframe>
+
+  <p>🔵 <a href="https://www.facebook.com" target="_blank">Visit Facebook Page</a></p>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>© 2026 Surkhet Computer Institute & Coaching Center</p>
+</footer>
+
+<!-- WhatsApp -->
+<a class="whatsapp" href="https://wa.me/9779858052111" target="_blank">💬</a>
+
+<!-- JS for Nepali-English toggle + Admission Email -->
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script>
+let nep=false;
+function toggleLang(){
+  nep=!nep;
+  title.innerText=nep?"सुर्खेत कम्प्युटर इन्स्टिच्युट":"Surkhet Computer Institute & Coaching Center";
+  subtitle.innerText=nep?"प्रविधिमा उज्यालो भविष्य":"Empowering Future Leaders in Technology";
+  heroTitle.innerText=nep?"व्यावसायिक कम्प्युटर संस्था":"Professional Computer & Coaching Institute";
+  heroText.innerText=nep?"सिक्नुहोस् • विकास गर्नुहोस्":"Learn • Grow • Succeed";
+  aboutTitle.innerText=nep?"हाम्रो बारेमा":"About Us";
+  courseTitle.innerText=nep?"कोर्सहरू":"Courses Offered";
+  galleryTitle.innerText=nep?"फोटो ग्यालेरी":"Institute Gallery";
+  admissionTitle.innerText=nep?"अनलाइन भर्ना फारम":"Online Admission Form";
+  admissionText.innerText=nep?"अनलाइन आवेदन दिनुहोस्":"Fill the form below to apply online";
+  contactTitle.innerText=nep?"सम्पर्क":"Contact Us";
+  document.querySelector(".lang-btn").innerText=nep?"English":"नेपाली";
+}
+
+// Admission Form JS
+document.getElementById('admissionForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const name=this.name.value;
+    const email=this.email.value;
+    const phone=this.phone.value;
+    const course=this.course.value;
+    const message=this.message.value;
+
+    Email.send({
+        SecureToken: "YOUR_SMTPJS_SECURE_TOKEN", // Get from smtpjs.com
+        To: 'surkhetcomputerinstitute@gmail.com',
+        From: "no-reply@yourdomain.com",
+        Subject: "New Online Admission",
+        Body: `<h3>New Admission Request</h3>
+               <p><strong>Name:</strong> ${name}</p>
+               <p><strong>Email:</strong> ${email}</p>
+               <p><strong>Phone:</strong> ${phone}</p>
+               <p><strong>Course:</strong> ${course}</p>
+               <p><strong>Message:</strong> ${message}</p>`
+    }).then(function(message){
+        alert("Admission submitted successfully! ✅");
+        const whatsappMsg=encodeURIComponent(`New Admission:\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nCourse: ${course}`);
+        window.open(`https://wa.me/9779858052111?text=${whatsappMsg}`, "_blank");
+        document.getElementById('admissionForm').reset();
+    });
+});
+</script>
+
+</body>
+</html>
